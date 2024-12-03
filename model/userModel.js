@@ -1,38 +1,42 @@
 const mongoose = require('mongoose');
 
 const addressSchema = new mongoose.Schema(
-    {
-      street: {
-        type: String,
-        required: [true, 'Street is required'],
-        trim: true,
-      },
-      city: {
-        type: String,
-        required: [true, 'City is required'],
-        trim: true,
-      },
-      state: {
-        type: String,
-        required: [true, 'State is required'],
-        trim: true,
-      },
-      pincode: {
-        type: String,
-        required: [true, 'Pincode is required'],
-        trim: true,
-      },
-      landmark: {
-        type: String,
-        trim: true,
-      },
-      isDefault: {
-        type: Boolean,
-        default: false, // Indicates if this is the default address
-      },
+  {
+    _id: {
+      type: mongoose.Schema.Types.ObjectId,
+      default: () => new mongoose.Types.ObjectId(), // Automatically generate an ID
     },
-    { _id: false }, // Prevents creation of a separate ID for each address
-  );
+    phone: {
+      type: String,
+      required: [true, 'Street is required'],
+      trim: true,
+    },
+    city: {
+      type: String,
+      required: [true, 'City is required'],
+      trim: true,
+    },
+    state: {
+      type: String,
+      required: [true, 'State is required'],
+      trim: true,
+    },
+    pincode: {
+      type: String,
+      required: [true, 'Pincode is required'],
+      trim: true,
+    },
+    fulladdress: {
+      type: String,
+      trim: true,
+    },
+    isDefault: {
+      type: Boolean,
+      default: false, // Indicates if this is the default address
+    },
+  }
+);
+
 
 const userSchema = new mongoose.Schema(
   {
