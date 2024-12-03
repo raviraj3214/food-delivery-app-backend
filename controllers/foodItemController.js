@@ -93,7 +93,8 @@ exports.getFoodItemsByRestaurant = async (req, res) => {
             message: "Food items fetched successfully",
             success: true,
             data: foodItems,
-            categories: uniqueCategories
+            categories: uniqueCategories,
+            restaurant:restaurant
         });
     } catch (error) {
         res.status(500).json({
