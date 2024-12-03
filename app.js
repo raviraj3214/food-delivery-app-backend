@@ -21,7 +21,7 @@ app.use(cookieParser())
 //   credentials: true      
 // }));
 app.use(cors({
-  origin: 'https://ravi-food-delivery-app.netlify.app/', 
+  origin: 'https://ravi-food-delivery-app.netlify.app', 
   credentials: true      
 }));
 app.use(express.json());
